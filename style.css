@@ -15,11 +15,12 @@
   article{
     padding: 2em;
     border-radius: 7px;
+    cursor: pointer;
+
 
   }  img{
     max-width: 250px;
     border-radius: 7px;
-    cursor: pointer;
 
 
   }
@@ -30,6 +31,9 @@
     display: none;
     /* visibility: hidden; */
   }
+ article:hover p{
+    display: block;
+ }
   ul{
     display: flex;
     align-items: center;
@@ -42,4 +46,7 @@
     text-decoration: none;
     margin-right: 7px;
     padding: 7px
+  }
+  p{
+    display: none;
   }
