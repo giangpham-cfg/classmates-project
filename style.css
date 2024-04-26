@@ -1,0 +1,45 @@
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+  main{
+     display:grid ;
+     gap:10px ;
+     grid-template-columns: repeat(auto-fill,  minmax(300px, 1fr)); 
+     background-color:#ececec"
+  }
+  h1{
+    width: fit-content;
+    margin: 2em auto;
+  }
+  article{
+    padding: 2em;
+    border-radius: 7px;
+
+  }  img{
+    max-width: 250px;
+    border-radius: 7px;
+    cursor: pointer;
+
+
+  }
+  img:hover{
+    filter: grayscale();
+    transition: 0.5s;
+    /* filter: drop-shadow(2px 4px 6px black); */
+    display: none;
+    /* visibility: hidden; */
+  }
+  ul{
+    display: flex;
+    align-items: center;
+  }
+  li{
+    list-style: none;
+    
+  }
+  a{
+    text-decoration: none;
+    margin-right: 7px;
+    padding: 7px
+  }
