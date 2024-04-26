@@ -23,7 +23,7 @@
 
 
   }
-  img:hover{
+  article:hover img{
     filter: grayscale();
     transition: 0.5s;
     /* filter: drop-shadow(2px 4px 6px black); */
