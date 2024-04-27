@@ -50,3 +50,16 @@
   p{
     display: none;
   }
+
+  button{
+    padding: 1em 2em;
+    border: none;
+    border-radius: 1.5em;
+    margin: 1em;
+    color: cornflowerblue;
+    font-size: large;
+    cursor: pointer;
+  }
+  button:hover{
+    background-color: bisque;
+  }
