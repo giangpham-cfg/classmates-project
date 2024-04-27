@@ -28,11 +28,11 @@ let persons = [
   },
 ];
 
-let maleList = persons.filter((person) => person.gender === "Male");
+let maleList = persons.filter((person) => person.gender == "Male");
 
-let femaleList = persons.filter((person) => person.gender === "Female");
+let femaleList = persons.filter((person) => person.gender == "Female");
 
-let otherList = persons.filter((person) => person.gender === "Other");
+let otherList = persons.filter((person) => person.gender == "Other");
 
 function buildPage(personsParam) {
   document.querySelector("main").innerHTML = "";
