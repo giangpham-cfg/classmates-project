@@ -1,83 +1,31 @@
-let persons = [
-  {
-    id: 1,
-    name: "Alona",
-    img: "./images/Alona-1.jpg",
-    country: "Ukraine",
-    it: "Web Development",
-    age: 23,
-    gender: "Female",
-  },
-  {
-    id: 2,
-    name: "Ana",
-    img: "./images/Ana-1.jpg",
-    country: "Portugal",
-    it: "Data Analyst",
-    age: 28,
-    gender: "Female",
-  },
-  {
-    id: 3,
-    name: "Burak",
-    img: "./images/Burak-1.jpg",
-    country: "Turkey",
-    it: "Data Analyst",
-    age: 33,
-    gender: "Male",
-  },
-  {
-    id: 4,
-    name: "Enes",
-    img: "./images/Enes-1.jpg",
-    country: "Turkey",
-    it: "Data Analyst",
-    age: 36,
-    gender: "Male",
-  },
-  {
-    id: 5,
-    name: "Fevzi",
-    img: "./images/Fevzi-1.jpg",
-    country: "Turkey",
-    it: "Web Development",
-    age: 33,
-    gender: "Male",
-  },
-  {
-    id: 6,
-    name: "Frank",
-    img: "./images/Frank-1.jpg",
-    country: "Hongkong",
-    it: "Data Analyst",
-    age: 32,
-    gender: "Male",
-  },
-  {
-    id: 7,
-    name: "Giang",
-    img: "./images/Giang-1.jpg",
-    country: "Vietnam",
-    it: "Data Analyst",
-    age: 36,
-    gender: "Female",
-  },
-  {
-    id: 8,
-    name: "Haroun",
-    img: "./images/Haroun-1.jpg",
-    country: "Algeria",
-    it: "Web Development",
-    age: 34,
-    gender: "Male",
-  },
-];
+let persons;
 
-let maleList = persons.filter((person) => person.gender === "Male");
+fetch("persons.json")
+  .then((response) => response.json())
+  .then((data) => {
+    persons = data;
 
-let femaleList = persons.filter((person) => person.gender === "Female");
+    const maleList = persons.filter((person) => person.gender === "Male");
+    const femaleList = persons.filter((person) => person.gender === "Female");
+    const otherList = persons.filter(
+      (person) => person.gender !== "Male" && person.gender !== "Female"
+    );
 
-let otherList = persons.filter((person) => person.gender === "Other");
+    buildPage(persons);
+
+    document
+      .getElementById("maleButton")
+      .addEventListener("click", () => buildPage(maleList));
+    document
+      .getElementById("femaleButton")
+      .addEventListener("click", () => buildPage(femaleList));
+    document
+      .getElementById("otherButton")
+      .addEventListener("click", () => buildPage(otherList));
+    document
+      .getElementById("allButton")
+      .addEventListener("click", () => buildPage(persons));
+  });
 
 function buildPage(personsParam) {
   document.querySelector("main").innerHTML = "";
@@ -114,5 +62,8 @@ function buildPage(personsParam) {
     image.style.cssText = "width: 300px;";
   }
 }
-
-buildPage(persons);
+let footer = document.createElement("footer");
+footer.textContent = "CopyRight 2024 made by Giang Pham & Haroun Khenfri";
+footer.style.cssText =
+  "background-color: #a5a923c4; text-align:center ; color: white; padding:10px";
+document.body.append(footer);
